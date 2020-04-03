@@ -71,12 +71,20 @@
 			// In $db_link wird eine mysql Verbindung gespeichert
 			$db_link = mysqli_connect("localhost", "root", "", "Druckerverwaltungstool");
 			
-			$sql = "
+			if($keyword == '') {
+				
+				$sql = " UPDATE " . $table . " SET " . $data . " = " . $data_value; 
+				
+			} else {
+				
+				$sql = "
+				
+					UPDATE " . $table . " SET " . $data . " = " . $data_value . " WHERE " . $keyword . " = " . $keyword_value . " 
+				
+				";
+				
+			}
 			
-				UPDATE " . $table . " SET " . $data . " = " . $data_value . " WHERE " . $keyword . " = " . $keyword_value . " 
-			
-			";
-
 			// In db_erg wird das Ergebnis der SQL Abfrage gespeichert
 			$db_erg = mysqli_query( $db_link, $sql );
 			

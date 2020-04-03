@@ -20,6 +20,10 @@
 			// Bindet header.php ein
 			// Bearbeitet alle GET-Anfragen außer "login"
 			
+			// Bindet die installation-Datei ein
+			// Prüft, ob Anwendung installiert werden soll
+			include_once('./document/installation.php');
+			
 			// Bindet die header.php ein
 			include_once('./class/header/header.php');
 
