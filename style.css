@@ -1,0 +1,838 @@
+/* Standard Styles */
+body{
+	
+	padding: 0;
+	margin: 0;
+	font-family: Arial;
+	
+}
+
+/* ####################################################### LOGIN BEREICH ################################################# */
+
+	/* Beschreibt den gesamten Login Bereich */
+	.login_box{
+		
+		width: 100%;
+		height: 100vh;
+		background-image: url(../images/background.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+
+	}
+
+	/* Beschreibt den Bereich um die Ladeanimation */
+	#load{
+		
+		position: absolute;
+		background-color: white;
+		border: 1px solid black;
+		width: 100%;
+		height: 100%;
+		z-index: 999;
+		opacity: 0.9;
+		
+	}
+	
+	/* Beschreibt die Position des Ladegifs */
+	#loadGif{
+		
+		position: absolute;
+		left: 60vh;
+		top: 10vh;
+		
+	}
+	
+	/* Beschreibt die Login Box */
+	.login_box_inner{
+		
+		position: absolute;
+		left: 64vh;
+		top: 30vh;
+		width: 35%;
+		min-height: 25%;
+		border: 3px solid white;
+		background: rgba(255, 255, 255, 0.6);
+		padding-top: 3%;
+		transition: 1s;
+		
+	}
+	
+	/* Beschreibt, wie sich die Login Box verhält, wenn der Benutzer mit der Maus drüberfährt */
+	.login_box_inner:hover{
+		
+		background: rgba(255, 255, 255, 0.9);
+		
+	}
+	
+	/* Beschreibt die Anmeldebutton */
+	.login_box_submit{
+		
+		background-color: transparent;
+		border: 1px solid black;
+		font-size: 100%;
+		padding: 1% 2% 1% 2%;
+		border-radius: 10px;
+		margin-top: 10px;
+		transition: 0.3s;
+		
+	}
+	
+	/* Beschreibt, wie sich der Anmeldebutton verhält, wenn der Benutzer mit der Maus drüberfährt */
+	.login_box_submit:hover{
+		
+		cursor: pointer;
+		
+	}
+	
+	/* Beschreibt die Anmeldeinput-box */
+	.login_box_input{
+		
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid black;
+		margin-bottom: 30px;
+		width: 35%;
+		font-size: 100%;
+		margin-left: 7px;
+		margin-right: 7px;
+		padding: 5px;
+		
+	}
+	
+	/* Fügt der Anmeldeinput-box eine Animation hinzu */
+	#login_box_error{
+		
+		animation: error 0.7s;
+		border-bottom: 1px solid red;
+		
+	}
+
+	/* Animation "error" */
+	@keyframes error{
+		
+		
+		0%{
+			
+			margin-left: 7px;
+			margin-right: 7px;
+			
+		}
+		
+		10%{
+			
+			margin-left: 0px;
+			margin-right: 7px;
+			
+		}
+		
+		20%{
+			
+			margin-left: 7px;
+			margin-right: 0px;
+			
+		}
+		
+		30%{
+			
+			margin-left: 7px;
+			margin-right: 7px;
+			
+		}
+		
+		40%{
+			
+			margin-left: 0px;
+			margin-right: 7px;
+			
+		}
+		
+		50%{
+			
+			margin-left: 7px;
+			margin-right: 0px;
+			
+		}
+		
+		60%{
+			
+			margin-left: 7px;
+			margin-right: 7px;
+			
+		}
+		
+		70%{
+			
+			margin-left: 0px;
+			margin-right: 7px;
+			
+		}
+		
+		80%{
+			
+			margin-left: 7px;
+			margin-right: 0px;
+			
+		}
+		
+		90%{
+			
+			margin-left: 7px;
+			margin-right: 7px;
+			
+		}
+		
+		100%{
+			
+			margin-left: 7px;
+			margin-right: 7px;
+			
+		}
+		
+	}
+	
+/* ####################################################### LOGIN BEREICH ENDE ################################################# */
+/* ####################################################### OFFENE BESTELLUNGEN ################################################# */
+	
+	/* Beschreibt die Position der Schrift "Etikett für Farbe ..... " */
+	.barcode{
+		
+		position: absolute;
+		right: 500px;
+		top: 500px;
+		
+	}
+
+/* ####################################################### OFFENE BESTELLUNGEN ENDE ################################################# */
+/* ####################################################### HEADER ################################################# */
+
+	/* Rahmen und Hintergrund für den Header */
+	.header{
+		
+		position: absolute;
+		background-size: cover;
+		width: 93%;
+		padding-top: 120px;
+		padding-bottom: 120px;
+		padding-left: 7%;
+		background: url(../images/background-header.jpg) center fixed;
+		
+	}
+	
+	/* Beschreibt die Überschrift "Druckerverwaltungstool" */
+	.heading{
+		
+		font-size: 250%;
+		
+	}
+	
+	/* Beschreibt die Seitentitel Schrift */
+	.site_title{
+		
+		margin-top: 10px;
+		margin-left: 300px;
+		font-size: 200%;
+		
+	}
+
+	.simple_button{
+
+		border: none;
+		background-color: transparent;
+		width: 100%;
+		height: 100%;
+
+	}
+
+	.simple_button:hover{
+
+		cursor: pointer;
+
+	}
+
+/* ####################################################### HEADER ENDE ################################################# */
+/* ####################################################### MENU ################################################# */
+	
+	/* Beschreibt den Container Menü */
+	.menu{
+		
+		position: absolute;
+		right: 1px;
+		top: -50px;
+		transition: 0.5s;
+		width: 100%;
+		
+	}
+	
+	/* Beschreibt das Verhalten des Menü's, wenn der Benutzer mit der Maus drüberfährt */
+	.menu:hover{
+		
+		top: 300px;
+		
+	}
+	
+	/* Beschreibt den Inhalt des Manü's */
+	.menu_inner{
+		
+		border: 1px solid #5A5252;
+		position: absolute;
+		width: calc(100% - 1px);
+		top: -300px;
+		height: 340px;
+		background-color: #5A5252;
+		color: white;
+		
+	}
+	
+	/* Beschreibt den Text des Menü's */
+	.menu_text{
+		
+		margin: 20px;
+		
+	}
+	
+	/* Beschreibt die einzelnen Button des Menü's */
+	.menu_button{
+		
+		background-color: transparent;
+		color: black;
+		border: none;
+		font-size: 100%;
+		border-bottom: 1px solid black;
+		padding-bottom: 0px;
+		margin-bottom: 5px;
+		transition: 0.3s;
+		
+	}
+	
+	/* Beschreibt das Verhalten der Buttons, wenn der Benutzer mit der Maus drüberfährt */
+	.menu_button:hover{
+		
+		cursor: pointer;
+		padding-bottom: 5px;
+		margin-bottom: 0px;
+		
+	}
+	
+	/* Beschreibt das Verhalten des Pfeiles Rechts Oben */
+	.image{
+		
+		position: relative;
+		width: 80px;
+		float: right;
+		transform: rotate(90deg);
+		top: 55px;
+		right: 5px;
+		
+	}
+	
+	/* Beschreibt das Verhalten von .image, wenn man über .menu mit der Maus fährt */
+	.menu:hover .image{
+		
+		animation: rotate 1s;
+		transform: rotate(270deg);
+		
+	}
+	
+	/* Animation, die den Pfeil dreht */
+	/* Pfeil wird erst gedreht, wenn Menü aufgeklappt ist, da das Hitergrundbild kurz verschoben wird */
+	@keyframes rotate{
+		
+		0%{
+			
+			transform: rotate(90deg);
+			
+		}
+		
+		50%{
+			
+			transform: rotate(90deg);
+			
+		}
+		
+		100%{
+			
+			transform: rotate(270deg);
+			
+		}
+		
+	}
+	
+/* ####################################################### MENU ENDE ################################################# *
+/* ####################################################### HEADER BUTTON ################################################# */
+	
+	/* Abstand zwischen header und Button */
+	.header_inner{
+		
+		margin-top: 350px;
+		
+	}
+	
+/* ####################################################### HEADER BUTTON ENDE ################################################# */
+
+/* ####################################################### WARNUNG DRUCKERÜBERSICHT ################################################# */
+
+	.warning_outer {
+
+		position: fixed;
+		text-align: left;
+		left: 5vh;
+		top: 3vh;
+		background-color: white;
+		padding: 10px;
+		margin-top: 10px;
+		margin-bottom: 0px;
+		animation: warning_blink 5s infinite linear;
+		border-radius: 10px;
+		box-shadow: 10px 10px 10px;
+
+	}
+
+	.warning_head {
+
+		font-size: 150%;
+		margin-bottom: 10px;
+
+	}
+
+	@keyframes warning_blink {
+		
+		0% {
+			
+			transform: rotate(0deg);
+			
+		}
+		
+		90% {
+			
+			transform: rotate(0deg);
+			
+		}
+		
+		91% {
+			
+			transform: rotate(3deg);
+			
+		}
+		
+		92% {
+			
+			transform: rotate(0deg);
+			
+		}
+		
+		93% {
+			
+			transform: rotate(-3deg);
+			
+		}
+		
+		94% {
+			
+			transform: rotate(0deg);
+			
+		}
+		
+	}
+
+/* ####################################################### WARNUNG DRUCKERÜBERSICHT ENDE ################################################# */
+
+/* ####################################################### ALLGEMEINER BEREICH ################################################# */
+
+	/* Style für Button */
+	.submit_button{
+		
+		background-color: transparent;
+		border: 1px solid black;
+		padding: 3px 10px 3px 10px;
+		
+	}
+	/* Beschreibt, wie sich Button verhalten, wenn der Benutzer mit der Maus drüberfährt */
+	.submit_button:hover{
+		
+		cursor: pointer;
+		
+	}
+
+	/* Style für Headerbutton */
+	.submit_button_big{
+		
+		font-size: 130%;
+		margin: 7px 30px 0 30px;
+		background-color: transparent;
+		border: 1px solid black;
+		border-radius: 10px;
+		padding: 10px 17px 10px 17px;
+		transition: 0.2s;
+		
+	}
+
+	/* Beschreibt, wie sich Headerbutton verhalten, wenn der Benutzer mit der Maus drüberfährt */
+	.submit_button_big:hover{
+		
+		margin: 0px 30px 5px 30px;
+		cursor: pointer;
+		background: linear-gradient(to right, #07A6F6 0%, white 10%);
+		box-shadow: 10px 10px 10px;
+		
+	}
+
+/* ####################################################### ALLGEMEINER BEREICH ENDE ############################################ */
+/* ####################################################### DRUCKERÜBERSICHT ########################################################## */
+	
+	.error_report{
+		
+		border: 1px solid black;
+		padding: 15px;
+		
+	}
+	
+	#messages{
+		
+		border: 1px solid black;
+		
+	}
+	
+	.messages_button{
+		
+		border: none;
+		border-bottom: 1px solid black;
+		font-size: 100%;
+		background-color: transparent;
+		/* margin: 5px 0 5px 0; */
+		padding: 5px 5px 1px 5px;
+		transition: 0.3s;
+		
+	}
+	
+	.messages_td{
+		
+		transition: 0.3s;
+		width: 50%;
+		
+	}
+	
+	.messages_td:hover{
+		
+		background-color: #EAE4E4;
+		cursor: pointer;
+		
+	}
+	
+	.messages_td:hover .messages_button{
+		
+		padding: 9px 5px 5px 5px;
+		cursor: pointer;
+		
+	}
+	
+/* ####################################################### DRUCKERÜBERSICHT ENDE ########################################################## */
+
+/* Box für Benutzerverwaltung */
+.user_border{
+	
+	border: 1px solid black;
+	width: 50%;
+	margin-top: 150px;
+	padding: 25px 0 25px 0;
+	text-align: left;
+	padding-left: 25px;
+	
+}
+
+/* Box für Startseite */
+.home_border{
+	
+	margin-top: 370px;
+	/* text-align: left; */
+	/* padding-left: 25px; */
+	/* border: 1px solid black; */
+	
+}
+
+/* Anzeige für Drucker */
+.printer_box{
+	
+	/* margin: 0 50px 0 50px; */
+	padding: 20px;
+	position: relative;
+	top: 50px;
+	/* border: 1px solid #0BE860; */
+	/* padding-bottom: 130px; */
+	
+}
+
+/* Anzeige für Drucker */
+.printer_box_image{
+	
+	position: relative;
+	margin-top: 10px;
+	font-size: 160%;
+	transition: 0.3s;
+	
+}
+
+/* Style für Text */
+.printer_box_text{
+	
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 0.3s;
+	opacity: 0;
+	width: 50%;
+	
+}
+
+.img{
+	
+	transition: 0.3s;
+	height: 250px;
+	
+}
+
+.printer_box:hover .img{
+	
+	filter: blur(10px);
+	
+}
+
+.printer_box:hover .printer_box_text{
+	
+	opacity: 1;
+	
+}
+
+/* Standort über Drucker stylen */
+.printer_box_location{
+	
+	/* text-align: center; */
+	font-size: 180%;
+	/* margin-bottom: 10px; */
+	/* width: 300px; */
+	border-top: 5px solid #0BE860;
+	padding: 10px 20px 0 20px;
+	
+}
+
+/* Definiert Text für Toner */
+.printer_box_text_toner{
+	
+	position: absolute;
+	width: 200px;
+	margin-top: 10px;
+	text-align: left;
+	font-size: 80%;
+	transition: 0.3s;
+	
+}
+
+/* Styles füs Link */
+a:link{
+	
+	color: black;
+	
+}
+a:visited{
+	
+	color: black;
+	
+}
+
+/* Styles für Box */
+.druckereigenschaften_box{
+	
+	border: 1px solid black;
+	width: 70%;
+	text-align: left;
+	margin-top: 200px;
+	padding: 50px;
+	border-radius: 10px;
+	
+}
+
+/* Style für Button */
+.submit_button_submenu{
+	
+	position: absolute;
+	right: -1px;
+	font-size: 130%;
+	margin: 30px 300px 0 0;
+	background-color: transparent;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px 17px 10px 17px;
+	transition: 0.2s;
+	
+}
+
+/* Hover Style für Button */
+.submit_button_submenu:hover{
+	
+	margin: 23px 300px 5px 0;
+	cursor: pointer;
+	background: linear-gradient(to right, #07A6F6 0%, white 10%);
+	box-shadow: 10px 10px 10px;
+	
+}
+
+/* Style für Button */
+.submit_button_submenu_bestellung{
+	
+	position: absolute;
+	right: 200px;
+	font-size: 130%;
+	margin: 30px 300px 0 0;
+	background-color: transparent;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px 17px 10px 17px;
+	transition: 0.2s;
+	
+}
+
+/* Style für Button */
+.submit_button_submenu_ausgeben{
+	
+	position: absolute;
+	right: 340px;
+	font-size: 130%;
+	margin: 30px 300px 0 0;
+	background-color: transparent;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px 17px 10px 17px;
+	transition: 0.2s;
+	
+}
+
+/* Hover Style für Button */
+.submit_button_submenu_bestellung:hover{
+	
+	margin: 23px 300px 5px 0;
+	cursor: pointer;
+	background: linear-gradient(to right, #07A6F6 0%, white 10%);
+	box-shadow: 10px 10px 10px;
+	
+}
+
+/* Hover Style für Button */
+.submit_button_submenu_ausgeben:hover{
+	
+	margin: 23px 300px 5px 0;
+	cursor: pointer;
+	background: linear-gradient(to right, #07A6F6 0%, white 10%);
+	box-shadow: 10px 10px 10px;
+	
+}
+
+/* Style für Standort */
+.druckereigenschaften_location{
+	
+	position: absolute;
+	left: 237px;
+	padding-top: 10px;
+	width: 13.5%;
+	text-align: center;
+	font-size: 150%;
+	
+}
+
+/* Style für Druckerverlinkung */
+.druckereigenschaften_text{
+	
+	height: 175px;
+	margin-left: 180px;
+	font-size: 120%;
+	
+}
+
+/* Box für Tonerbestand */
+.druckereigenschaften_bestand{
+	
+	margin-bottom: 20px;
+	margin-top: 20px;
+	height: 20px;
+	width: 100%;
+	border: 1px solid black;
+	
+}
+
+/* Höhe der Tonerfüllung */
+.druckereigenschaften_bestand_inline{
+	
+	height: 20px;
+	
+}
+
+.tonereigenschaften_text{
+	
+	height: 175px;
+	margin-left: 180px;
+	font-size: 120%;
+	
+}
+
+.table{
+	
+	padding: 50px;
+	text-align: center;
+	border-spacing: 20px 4px;
+	
+}
+
+.table_box{
+	
+	border: 1px solid black;
+	margin-top: 450px;
+	margin-bottom: 50px;
+	width: 80%;
+	border-radius: 10px;
+	text-align: left;
+	padding-left: 10%;
+	
+}
+
+.table tr th{
+	
+	padding: 10px 20px 10px 20px;
+	border: 1px solid black;
+	
+}
+
+.table tr td{
+	
+	padding: 10px 20px 10px 20px;
+	border: 1px solid black;
+	
+}
+
+/* Zeigt warnung */
+#warning{
+	
+	animation: blink_warning infinite 2s;
+	
+}
+
+/* Animation für Warnung */
+@keyframes blink_warning{
+	
+	0%{
+		
+		border-top: 3px solid transparent;
+		
+	}
+	
+	50%{
+		
+		border-top: 3px solid red;
+		
+	}
+	
+	100%{
+		
+		border-top: 3px solid transparent;
+		
+	}
+	
+}
