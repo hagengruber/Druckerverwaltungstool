@@ -1,7 +1,7 @@
 # Druckerverwaltungstool
 Eine webbasierte Anwendung zum Verwalten von Druckern und deren Zubehören
 
-## Vorraussetzungen
+## Voraussetzungen
 
 Das Programm benötigt eine SNMP-Schnittstelle. Prüfen Sie, ob in phpinfo(); die Schnittstelle korrekt installiert ist.
 
