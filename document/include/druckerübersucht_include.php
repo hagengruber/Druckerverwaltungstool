@@ -1,13 +1,5 @@
 <?php
 	
-	/*
-		
-		Author: 					Hagengruber Florian
-								f.hagengruber@schock.de
-								+49 9921 600 290
-								
-	*/
-	
 	// druckerübersucht_include.php
 	// Funktionen für druckerübersucht
 	
@@ -60,7 +52,7 @@
 		public static function set_var($id) {
 			
 			// Speichere in $doc alle Spaltennamen, die gefunden werden sollen
-			/* $doc = [
+			$doc = [
 				
 				0 => 'name',
 				1 => 'ip',
@@ -76,11 +68,9 @@
 			self::$id = $id;
 			self::$name = $printer_info['0'];
 			self::$ip = $printer_info['1'];
-			self::$customID = $printer_info['2']; */
+			self::$customID = $printer_info['2'];
 			
-			
-			self::$id = $id;
-			
+			/*
 			if ($id == 1) {
 				
 				self::$name = 'PRN021';
@@ -98,15 +88,16 @@
 				self::$contact = 'OffIts';
 				
 			}
+			*/
 			
 			// In $printer_info['3'] ist nur ein Fremdschlüssel gespeichert
 			// Die benötigten Daten werden nun anhand des Fremdschlüssels geholt
 			// Speichere in $doc alle Spaltennamen, die gefunden werden sollen
-				// $doc = [ 0 => 'name' ];
+				$doc = [ 0 => 'name' ];
 			// In $search werden alle gefundenen Daten gespeichert
-				// $search = get_sql_data::find_all_data('SELECT name FROM location WHERE ID=' . $printer_info['3'], $doc);
+				$search = get_sql_data::find_all_data('SELECT name FROM location WHERE ID=' . $printer_info['3'], $doc);
 			// Wenn nichts gefunden wurde
-			/* if(!isset($search['0']))
+			if(!isset($search['0']))
 				// Setzte die Stelle 0 des Arrays search auf False
 				$search = [ 0 => 'false' ]; 
 			
@@ -126,13 +117,13 @@
 			
 			// Speichere die erste Stelle des Arrays search in die Variable contact
 			self::$contact = $search['0'];
-			*/
+			
 			
 		}
 		
 		public static function get_tonerlevel() {
 
-			return [ 0 => [ 0 => 'Cyan', 1 => '50'] ];
+			return [ 0 => [ 0 => 'Cyan', 1 => '10'] ];
 			
 		}
 		
@@ -141,9 +132,9 @@
 			// Speichere die Farbe des Toners in $toner_color
 			self::$color = $color;
 
-			// $toner_id = get_sql_data::find_all_data('SELECT * FROM toner WHERE printerID=' . self::$id . ' AND color=\'' . self::$color . '\'', [ 0 => 'ID' ]);
+			$toner_id = get_sql_data::find_all_data('SELECT * FROM toner WHERE printerID=' . self::$id . ' AND color=\'' . self::$color . '\'', [ 0 => 'ID' ]);
 
-			$toner_id = [ 0 => self::$id ];
+			// $toner_id = [ 0 => self::$id ];
 
 			if (!isset($toner_id['0']))
 			    return false;

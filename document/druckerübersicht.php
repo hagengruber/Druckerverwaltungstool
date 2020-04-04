@@ -1,13 +1,5 @@
 <?php
 	
-	/*
-		
-		Author: 					Hagengruber Florian
-									f.hagengruber@schock.de
-									+49 9921 600 290
-								
-	*/
-	
 	// druckerübersicht.php
 	// Zeigt alle Drucker + Tonerbestände
 	
@@ -23,7 +15,9 @@
 		<?php
 
 			// In $all_printer_id werden alle Drucker-ID's gespeichert
-			$all_printer_id = [ 0 => 1, 1 => 2 ];
+			// $all_printer_id = [ 0 => 1, 1 => 2 ];
+
+			$all_printer_id = get_sql_data::find_all_data('SELECT * FROM printer', [ 0 => 'ID' ]);
 
 			// ##################### HEADER ###########################
 				
