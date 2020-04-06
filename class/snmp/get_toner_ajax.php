@@ -1,7 +1,9 @@
 <?php
-	
+
 	// get_toner.php
 	// Gibt Tonerbestände aus
+
+	include_once('./snmp_number.php');
 
     class get_toner {
 
@@ -101,22 +103,23 @@
 						
 						for ($i = 0; $i != count($color); $i++) {
 							
+							// Da snmp momentan nicht zur verfügung steht, ist dieser teil fest
 							switch($color[$counter]) {
 								
 								case 'cyan':
-									$bestand = 63;
+									$bestand = rand(0, 100);
 									break;
 								
 								case 'yellow':
-									$bestand = 48;
+									$bestand = rand(0, 100);
 									break;
 									
 								case 'magenta':
-									$bestand = 92;
+									$bestand = rand(0, 100);
 									break;
 									
 								case 'black':
-									$bestand = 16;
+									$bestand = rand(0, 100);
 									break;
 								
 							}
@@ -133,10 +136,10 @@
                     // Gib nun den Bestand aus
 
                     // Wann soll Warnung ausgegeben werden?
-
+					
                     if ($bestand >= 0) {
 
-                        /*echo '
+                        echo '
                     
                             <div class="druckereigenschaften_bestand" title=" ' . $bestand . '%">
                                 
@@ -144,7 +147,7 @@
                                 
                             </div>
                         
-                        '; */
+                        ';
 
                     } else {
 
@@ -192,5 +195,8 @@
         }
 
     }
+
+	header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
+	get_toner::get_toner_return($_POST['ip']);
 
 ?>

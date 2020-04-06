@@ -41,6 +41,25 @@
 				
 				</table>
 				
+				<script>
+					
+					function send(id, ip) {
+						
+						var request = new XMLHttpRequest;
+						request.addEventListener(\'load\', function(event) {
+							
+							var test = document.getElementById("rep" + id).innerHTML = request.responseText;
+							
+						});
+						
+						request.open("POST", "./class/snmp/get_toner_ajax.php");
+						request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+						request.send("ip=" + ip);
+
+					}
+
+				</script>
+				
 				<table style="width: 80%; text-align: center; border-collapse:collapse">
 				
 			';
@@ -198,8 +217,12 @@
 									
 									' . self::$name;
 
-									$warningToner =  get_toner::get_toner_return(self::$ip);
-									$error = get_sql_data::get_toner_warning(self::$id, false);
+									echo '<span id="rep' . self::$id . '">';
+
+										$warningToner =  get_toner::get_toner_return(self::$ip);
+										$error = get_sql_data::get_toner_warning(self::$id, false);
+									
+									echo '</span>';
 									
 									if($error != 0) {
 										
@@ -234,6 +257,8 @@
 									}
 								
 								echo '
+			
+								
 			
 								</div>
 							
@@ -296,6 +321,12 @@
             }
 
         }
+
+		public static function get_ajax() {
+			
+			
+			
+		}
 
 	}
 	

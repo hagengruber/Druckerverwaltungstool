@@ -40,19 +40,20 @@
 
                         // Setzt die Farben aller Toner + Bestand des Druckers
                         $tonerlevel = overview::get_tonerlevel();
-
+						
                         // Solange nicht alle Toner behandelt wurden
                         for ($a = 0; $a != count($tonerlevel); $a++) {
 
                             // zuerst werden die benötigten Infos des Toners gespeichert
                             // wie Farbe und Toner-ID
                             overview::set_toner_var($tonerlevel[$a]['0']);
-
+							
                             ######################### TONER CHANGE CONTROL #########################
 
                             // Prüft, ob Toner unathorisiert getauscht wurde
 								// overview::put_printer_control();
-
+								echo '<script> send(' . overview::$id . ', "' . overview::$ip . '"); </script>';
+								
                             ######################### TONER CHANGE CONTROL END #####################
 
 
