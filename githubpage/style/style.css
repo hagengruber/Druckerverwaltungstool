@@ -15,7 +15,8 @@ body {
 .headline {
 	
 	color: white;
-	font-size: 200%;
-	margin-top: 50%;
+	font-size: 300%;
+	padding-top: 15vh;
+	font-weight: bold;
 	
 }
