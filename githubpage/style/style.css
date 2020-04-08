@@ -16,7 +16,7 @@ body {
 	
 	color: white;
 	font-size: 300%;
-	padding-top: 15vh;
+	padding-top: 3%;
 	font-weight: bold;
 	
 }
@@ -25,7 +25,32 @@ body {
 	
 	color: white;
 	font-size: 150%;
-	opacity: 0.3;
-	padding-top: 5vh;
+	opacity: 0.5;
+	padding-top: 2%;
+	
+}
+
+.button {
+	
+	margin: 5% 20px 0 20px;
+	font-size: 100%;
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+	border-radius: 10px;
+	opacity: 0.5;
+	padding: 10px 20px;
+	
+}
+
+.button:hover {
+	
+	cursor: pointer;
+	
+}
+
+a {
+	
+	text-decoration: none;
 	
 }
