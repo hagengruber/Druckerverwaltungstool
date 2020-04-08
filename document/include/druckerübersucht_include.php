@@ -217,7 +217,7 @@
 									
 									' . self::$name;
 
-									echo '<span id="rep' . self::$id . '">';
+									echo '<span id="rep' . self::$id . '"> <br><br> Tonerstände werden abgefragt... bitte warten ';
 
 										$warningToner =  get_toner::get_toner_return(self::$ip);
 										$error = get_sql_data::get_toner_warning(self::$id, false);
