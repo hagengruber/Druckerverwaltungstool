@@ -8,4 +8,3 @@ Das Programm benötigt eine SNMP-Schnittstelle. Prüfen Sie, ob in phpinfo(); di
 ## Installation
 
 Die Dateien auf den Webserver kopieren und diesen dann aufrufen. Danach wird automatisch das Installationsprogramm gestartet.
-`Code`
