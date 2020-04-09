@@ -1,8 +1,16 @@
 body {
 	
 	color: white;
+	background: URL(https://user-images.githubusercontent.com/63011310/78898158-a23dac80-7a73-11ea-8784-3d84537b7218.gif) fixed;
 	background-color: black;
+	
+}
 
+::selection {
+	
+	color: orange;
+	background-color: transparent;
+	
 }
 
 @keyframes rotate {
@@ -23,13 +31,23 @@ body {
 
 .page {
 	
-	padding: 0 15%;
+	margin: 0 13%;
+	padding: 2% 2% 5% 2%;
+	background-color: black;
+	
 	
 }
 
 .page h1 {
 	
 	border-bottom: 1px solid #DAD9D9;
+	margin: 5% 0 0 0;
+	
+}
+
+.page p {
+	
+	margin-bottom: 0;
 	
 }
 
@@ -86,5 +104,22 @@ body {
 	border-style: solid;
 	border-color: black transparent transparent transparent;
 	transition: 0.3s;
+	
+}
+
+.load_in {
+	
+	position: fixed;
+	z-index: 999999;
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+	
+}
+
+#load {
+	
+	transition: 0.5s;
+	z-index: 999999;
 	
 }
