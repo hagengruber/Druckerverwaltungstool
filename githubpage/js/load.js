@@ -1,4 +1,4 @@
-window.onload = setTimeout(animation_fade_out, 1000);
+window.onload = setTimeout(animation_fade_out, 2000);
 
 function animation_fade_out() {
 	
