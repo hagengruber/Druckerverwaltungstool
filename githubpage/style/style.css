@@ -107,7 +107,7 @@ body {
 	
 }
 
-.load_in {
+#load_in {
 	
 	position: fixed;
 	z-index: 999999;
@@ -121,5 +121,21 @@ body {
 	
 	transition: 0.5s;
 	z-index: 999999;
+	
+}
+
+@keyframes fadeout {
+	
+	99% {
+		
+		visibility: visible
+		
+	}
+	
+	100% {
+		
+		visibility: hidden;
+		
+	}
 	
 }
