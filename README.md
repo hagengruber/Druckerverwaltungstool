@@ -1,6 +1,6 @@
 # Druckerverwaltungstool
 Eine webbasierte Anwendung zum Verwalten von Druckern und deren Zubehören.
-<br><a href="https://implode.github.io/Druckerverwaltungstool" target="_blank"> View Github Page </a>
+<br><a href="https://implod3.github.io/Druckerverwaltungstool" target="_blank"> View Github Page </a>
 
 ## Voraussetzungen
 
