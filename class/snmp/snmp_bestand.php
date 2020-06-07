@@ -19,9 +19,12 @@
 	// Gibt den prozenturalen Bestand des Toners zurück
 	// In $num ist die letzte Nummer der OID gespeichert, die die gewünschte Farbe enthält
 	function get_toner_bestand($ip, $num){
-
+		
+		$session = new SNMP(SNMP::VERSION_1, $ip, "public");
+		
 		// In $max_toner_unform wird der maximale Bestand des Toners gespeichert
-		$max_toner_unform = snmpwalk($ip, 'public', '.1.3.6.1.2.1.43.11.1.1.8.1.' . $num);
+		$max_toner_unform = $session->walk('.1.3.6.1.2.1.43.11.1.1.8.1.' . $num);
+		
 		// Der Array $max_toner_unform wird in einen String konvertiert
 		$max_toner_unform = implode(',', $max_toner_unform);
 		
@@ -39,7 +42,8 @@
 		}
 
 		// In $toner_unform wird der tatsächliche Bestand des Toners gespeichert
-		$toner_unform = snmpwalk($ip, 'public', '.1.3.6.1.2.1.43.11.1.1.9.1.' . $num);
+		$toner_unform = $session->walk('.1.3.6.1.2.1.43.11.1.1.9.1.' . $num);
+		
 		// Der Array $toner_unform wird in einen String konvertiert
 		$toner_unform = implode(',', $toner_unform);
 		
@@ -56,8 +60,10 @@
 			
 		}
 
-		// Nun wird der prozenturale Anteil des Bestandes im Toner berechnet und in $erg_prozent gespeichert
+		// Nun wird der prozentuale Anteil des Bestandes im Toner berechnet und in $erg_prozent gespeichert
 		$erg_prozent = ( 100 / $max_toner ) * $toner;
+		
+		$session->close();
 		
 		// $erg_prozent wird zurückgegeben
 		return $erg_prozent;

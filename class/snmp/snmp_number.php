@@ -26,7 +26,11 @@
 			"1" => ".1.3.6.1.2.1.43.11.1.1.6.1.2",
 			"2" => ".1.3.6.1.2.1.43.11.1.1.6.1.3",
 			"3" => ".1.3.6.1.2.1.43.11.1.1.6.1.4",
-			"4" => ".1.3.6.1.2.1.43.11.1.1.6.1.5"
+			"4" => ".1.3.6.1.2.1.43.11.1.1.6.1.5",
+			"5" => ".1.3.6.1.2.1.43.12.1.1.4.1.1",
+			"6" => ".1.3.6.1.2.1.43.12.1.1.4.1.2",
+			"7" => ".1.3.6.1.2.1.43.12.1.1.4.1.3",
+			"8" => ".1.3.6.1.2.1.43.12.1.1.4.1.4"
 			
 		);
 		
@@ -37,15 +41,20 @@
 		$return = [];
 		
 		// Solange noch unbehandelte Datensätze in $oids sind ( noch nicht getestete IODs )
-		/* while($end != $i){
+		while($end != $i){
 			
 			// Speichere in die Variable $temp den SNMP-Array mit der jeweils ausgewählten OID Nummer
 			// Erhöhe dann den Zähler $i um 1
 			// @$temp = snmpwalk($ip, 'public', $oids[$i++]);
-			@$temp = snmpwalk($ip, 'public', $oids[$i++]);
+			
+			$session = new SNMP(SNMP::VERSION_1, $ip, "public");
+			
+			$temp = $session->walk($oids[$i++]);
+			
+			$session->close();
 			
 			// Konvertiere den Array $temp in einen String
-			@$temp = implode(',', $temp);
+			$temp = implode(',', $temp);
 			
 			// Vergleiche den String $temp mit dem String 'toner'
 			// Speichere das Ergebnis in die Variable $erg
@@ -59,15 +68,27 @@
 			// Speichere das Ergebnis in die Variable $erg_Kassette
 			$erg_Kassette = stripos($temp, 'Kassette');
 			
+			$erg_color = stripos($temp, 'black');
+			
+			if(!$erg_color >= 1)
+				$erg_color = stripos($temp, 'black');
+			if(!$erg_color >= 1)
+				$erg_color = stripos($temp, 'cyan');
+			if(!$erg_color >= 1)
+				$erg_color = stripos($temp, 'yellow');
+			if(!$erg_color >= 1)
+				$erg_color = stripos($temp, 'magenta');
+				
+			
 			// Wenn der verleich positiv war, ist das gesuchte Wort in der Variablen gespeichert
 			// Wenn Suchergebnise gefunden wurden ( heisst das in der jeweiligen OID Nummer Datensätzen mit dem Stichwort Toner oder Cartridge gespeichert sind )
-			if(strlen($erg) >= 1 || $erg_Cartridge >= 1 || $erg_Kassette >= 1){
+			if(strlen($erg) >= 1 || $erg_Cartridge >= 1 || $erg_Kassette >= 1 || $erg_color >= 1) {
 				
 				// Prüft, ob in $temp ein Stichwort mit dem Inhalt 'schwarz' ist
 				$erg = stripos($temp, 'schwarz');
 			
 				// Wenn Ja
-				if(strlen($erg) >= 1){
+				if(strlen($erg) >= 1) {
 					
 					// Zuerst wird der Zähler $i um 1 verringert
 					// Die OID Nummer wird in die Variable $num_black gespeichert
@@ -186,10 +207,12 @@
 				
 			}
 			
-		} */
+		}
+		
+		$session->close();
 		
 		// Gibt $return zurück
-		return [ "yellow" => 5 ];
+		return $return;
 		
 	}
 	

@@ -4,6 +4,7 @@
 	// Gibt Tonerbestände aus
 
 	include_once('./snmp_number.php');
+	include_once('./snmp_bestand.php');
 
     class get_toner {
 
@@ -50,9 +51,7 @@
 
             // Speichert in $ausgabe alle Farben und OIDs, die der Drucker drucken kann ( für mehr Details, siehe snmp_number.php )
             $ausgabe = get_toner_number($ip);
-
-			$ausgabe = [ 'cyan' => [ 1 ], 'yellow' => [ 1 ], 'magenta' => [ 1 ], 'black' => [ 1 ] ];
-
+			
             // $warning wird auf true gesetzt, wenn Toner unter 5% ist
             $warning = false;
 
@@ -73,61 +72,31 @@
                     // Speichere den Bestand des Toners in Prozent in die Variable $bestand ( für die Farbe Cyan )
                     // $bestand = get_toner_bestand($ip, $ausgabe[$color[$counter]]);
 
-					if ($ip == '0.0.0.0') {
+					for ($i = 0; $i != count($color); $i++) {
 						
-						for ($i = 0; $i != count($color); $i++) {
+						// Da snmp momentan nicht zur verfügung steht, ist dieser teil fest
+						switch($color[$counter]) {
 							
-							switch($color[$counter]) {
-								
-								case 'cyan':
-									$bestand = 10;
-									break;
-								
-								case 'yellow':
-									$bestand = 36;
-									break;
-									
-								case 'magenta':
-									$bestand = 83;
-									break;
-									
-								case 'black':
-									$bestand = 23;
-									break;
-								
-							}
+							case 'cyan':
+								$bestand = round(get_toner_bestand($ip, $ausgabe[$color[$counter]]));
+								break;
 							
-						}
-						
-					} else {
-						
-						for ($i = 0; $i != count($color); $i++) {
-							
-							// Da snmp momentan nicht zur verfügung steht, ist dieser teil fest
-							switch($color[$counter]) {
+							case 'yellow':
+								$bestand = round(get_toner_bestand($ip, $ausgabe[$color[$counter]]));
+								break;
 								
-								case 'cyan':
-									$bestand = rand(0, 100);
-									break;
+							case 'magenta':
+								$bestand = round(get_toner_bestand($ip, $ausgabe[$color[$counter]]));
+								break;
 								
-								case 'yellow':
-									$bestand = rand(0, 100);
-									break;
-									
-								case 'magenta':
-									$bestand = rand(0, 100);
-									break;
-									
-								case 'black':
-									$bestand = rand(0, 100);
-									break;
-								
-							}
+							case 'black':
+								$bestand = round(get_toner_bestand($ip, $ausgabe[$color[$counter]]));
+								break;
 							
 						}
 						
 					}
-
+					
                     // $bestand = 0;
                     // $warning wird auf true gesetzt, wenn Toner unter 5% ist
                     if ($bestand <= 20 && $bestand >= 0)
@@ -195,8 +164,9 @@
         }
 
     }
-
+	
 	header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
-	get_toner::get_toner_return($_POST['ip']);
+	echo get_toner::get_toner_return($_POST['ip']);
+	exit;
 
 ?>

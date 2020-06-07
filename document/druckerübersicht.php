@@ -8,6 +8,16 @@
 	
 ?>
 
+<script>
+	
+	function Sleep(milliseconds) {
+	   return new Promise(resolve => setTimeout(resolve, milliseconds));
+	}
+	
+</script>
+
+<input id="send_status" type="hidden" value="ok">
+
 <center>
 
 	<div class="home_border">
@@ -52,7 +62,52 @@
 
                             // Prüft, ob Toner unathorisiert getauscht wurde
 								// overview::put_printer_control();
-								echo '<script> send(' . overview::$id . ', "' . overview::$ip . '"); </script>';
+								echo '
+									
+									<script>
+									
+										async function try_send() {
+											
+											console.log("Wait: ",' . overview::$id * 2000 . ', " ID: ", ' . overview::$id . ');
+											await Sleep(' . overview::$id * 2000 . ');
+											
+											var el = document.getElementById("hidden' . overview::$id . '").value;
+											
+											while (el == "send_false") {
+												
+												var control_send = document.getElementById("send_status").value;
+												
+												if (control_send == "ok") {
+													
+													console.log("Send Data: ", ' . overview::$id . ');
+													
+													document.getElementById("send_status").value = "no";
+													send(' . overview::$id . ', "' . overview::$ip . '");
+													document.getElementById("hidden' . overview::$id . '").value = "ok";
+													document.getElementById("send_status").value = "ok";
+													
+													console.log("Send ok: ", ' . overview::$id . ');
+													
+												} else {
+													
+													console.log("Wait", ' . overview::$id . ');
+													await Sleep(1000);
+													
+												}
+												
+												var el = document.getElementById("hidden' . overview::$id . '").value;
+												
+											}
+											
+											console.log("Finish", ' . overview::$id . ');
+											
+										}
+										
+										try_send();
+										
+									</script>
+								
+								';
 								
                             ######################### TONER CHANGE CONTROL END #####################
 

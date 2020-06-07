@@ -5,7 +5,7 @@
 -- Host: 127.0.0.1
 -- Erstellungszeit: 03. Apr 2020 um 15:24
 -- Server-Version: 10.4.11-MariaDB
--- PHP-Version: 7.4.1 t
+-- PHP-Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -189,11 +189,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `name`) VALUES
-(1, 'administrator'),
-(2, 'hagengruber'),
-(3, 'eibl'),
-(4, 'sagstetter'),
-(5, 'sigl');
+(1, 'administrator');
 
 --
 -- Indizes der exportierten Tabellen

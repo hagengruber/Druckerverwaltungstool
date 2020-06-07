@@ -55,7 +55,7 @@
 						request.open("POST", "./class/snmp/get_toner_ajax.php");
 						request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 						request.send("ip=" + ip);
-
+						
 					}
 
 				</script>
@@ -209,6 +209,8 @@
 					
 						<span id="' . self::$id . '" class="printer_box_location"> ' . ucfirst(self::$location) . ' </span>
 						
+						<input type="hidden" id="hidden' . self::$id . '" value="send_false">
+						
 						<div class="printer_box_image">
 								
 								<img src="./images/drucker_icon.png" class="img">
@@ -217,7 +219,7 @@
 									
 									' . self::$name;
 
-									echo '<span id="rep' . self::$id . '"> <br><br> Tonerstände werden abgefragt... bitte warten ';
+									echo '<span id="rep' . self::$id . '"> <br> <img style="width: 50%;" src="./images/cat_load.gif"> ';
 
 										$warningToner =  get_toner::get_toner_return(self::$ip);
 										$error = get_sql_data::get_toner_warning(self::$id, false);
